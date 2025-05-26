@@ -1,7 +1,12 @@
 # T-FLIPFLOP-POSEDGE
 
 Name: Rathish R
+
 Reg: 24901297
+
+Date : 6.05.25
+
+
 
 **AIM:**
 
