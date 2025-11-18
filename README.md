@@ -1,13 +1,5 @@
 # T-FLIPFLOP-POSEDGE
 
-Name: Rathish R
-
-Reg: 24901297
-
-Date : 6.05.25
-
-
-
 **AIM:**
 
 To implement  T flipflop using verilog and validating their functionality using their functional tables
@@ -36,55 +28,43 @@ From the above characteristic table, we can directly write the next state equati
 
 **Procedure**
 
-1.Define Module: Define a Verilog module for the T flip-flop with inputs (T, CLK) and outputs (Q, Q_bar).
-
-2.Declare Inputs and Outputs: Declare input and output ports for the module.
-
-3.Implement Flip-Flop Logic: Write Verilog code to implement the T flip-flop logic based on its functional table. Use a synchronous always @(posedge CLK) block to trigger the flip-flop on the positive edge of the clock signal.
-
-4.Simulate Using Testbench: Write a Verilog testbench to simulate the behavior of the T flip-flop under different input conditions.
-
-5.Apply Input Stimuli: In the testbench, apply various combinations of input stimuli (T, CLK) to cover all possible input states.
-
-6.Verify Output Behavior: Verify that the output behavior of the T flip-flop matches the expected behavior defined by its functional table.
-
-7.Check for Race Conditions: Ensure that there are no race conditions or undefined states in the design by analyzing the timing and sequence of input changes.
+![Screenshot 2025-05-06 094114](https://github.com/user-attachments/assets/0aca1749-7127-4957-a513-50ff81567478)
 
 
+## **PROGRAM**
+Developed by:Rathish.R
 
-**PROGRAM**
+Register No:212224240132
 
 ```
-module TFLIPFLOPPOSEDGE( input clk, rst_n, input t,
-output reg q,
-output q_bar
-);
-always@(posedge clk) 
-begin 
-if(!rst_n)
-q<=0;
-else
-if(t)
-q<=~q;
-else
-q<=q;
-end
-assign q_bar = ~q;
+module pugal9(t, clk, rst, q);
+  input t, clk, rst;
+  output reg q;
+
+  always @(posedge clk or posedge rst) 
+begin
+    if (rst)
+      q <= 0; 
+    else if (t==0)
+      q <= q; 
+     else
+        q<=~q;
+  end
 endmodule
+
 ```
+
 
 **RTL LOGIC FOR FLIPFLOPS**
 
-
-![image](https://github.com/23004513/T-FLIPFLOP-POSEDGE/assets/138973069/35b6a3a6-9937-43bc-b147-6ce8a87dfe63)
+![image](https://github.com/user-attachments/assets/115c8aec-7de0-4541-80ff-c0f3950a5b1e)
 
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
-
-![image](https://github.com/23004513/T-FLIPFLOP-POSEDGE/assets/138973069/73ee8589-58a0-4446-be72-67c2760de6de)
+![image](https://github.com/user-attachments/assets/ae289843-61d0-44a7-bd0c-4993d104b81e)
 
 
 **RESULTS**
 
-Hence, T flipflop using verilog and validating their functionality using their functional tables is implemented.
+implementation of T flipflop using verilog and validating their functionality using their functional tables
